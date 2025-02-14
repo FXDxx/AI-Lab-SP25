@@ -1,0 +1,277 @@
+i = 34
+print(type(i))
+-----------------------------
+a = "hello wolrd how r u"
+print(type(a))
+--------------
+i = 5
+
+while i <= 10:
+  print(i)
+  i = i+1
+-----------------------------
+
+67 == 90
+i = 3.8
+type(i)
+i = int(i)
+print(type(i))
+
+for i in 'jello':
+  print(i)
+
+----------------------------
+num = 10092099320930293
+if num % 2 == 0:
+  print('even')
+else:
+  print('odd')
+---------------------------
+
+# Python syntax, python comments
+
+"""Hello world"""
+'''Hello world'''
+"Hello world"
+'Hello world'
+
+x = 5
+#y = "John"
+print(x)
+#print(y)
+
+x = 4       
+X = "Sally" 
+print(x) # case sensitive
+print(X)
+
+a = str(3)   
+b = int("723623")   
+print(type(b)) 
+c = float(3)
+
+# legal variable names
+MyVar = "John"
+my_var = "John" # snake case
+_my_var = "John" # snake case
+myVar = "John" # camel case
+MYVAR = "John"
+myvar2 = "John"
+
+# assign multiple names
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+
+# one value multiple variables
+x = y = z = "Orange"
+print(x)
+print(y)
+print(z)
+
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+print(x)
+print(y)
+print(z)
+
+
+----------------------------------------
+
+# output variables
+x = "Python"
+y = "is"
+z = "awesome"
+print(x, y, z)
+
+a = "Python "
+b = "is "
+c = "awesome"
+print(a + b + c)
+
+x = 5
+y = 10
+print(x + y) # cannot add to string
+
+v = 'dssd'
+print(x,v) # can do this
+# Create a variable outside of a function, and use it inside the function
+
+x = "awesome"
+
+def myfunc():
+  print("Python is " + x)
+
+myfunc()
+
+# Create a variable inside a function, with the same name as the global variable
+
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+
+print("Python is " + x)
+-----------------------------------
+
+# data types
+x = "Hello World"
+b = 20
+c = 20.5
+d = 1j
+
+e = ["apple", "banana", "cherry"]		
+f = ("apple", "banana", "cherry")	
+g = range(6)	
+h = {"name" : "John", "age" : 36}		
+i = {"apple", "banana", "cherry"}		
+j = frozenset({"apple", "banana", "cherry"})		
+k = True	
+l = b"Hello"		
+m = bytearray(5)		
+n = memoryview(bytes(5))	
+o = None
+
+print(type(x))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(f))
+print(type(g))
+print(type(h))
+print(type(i))
+print(type(j))
+print(type(k))
+print(type(l))
+print(type(m))
+print(type(n))
+print(type(o))
+-------------------------------
+# List 
+thislist = ["apple", "banana", "cherry"]
+print(thislist[2:])
+print(thislist)
+print(thislist[-1])
+print(thislist[1])
+print(len(thislist))
+# list can contain different data types
+list1 = ["abc", 34, True, 40, "male"]
+print(type(list1))
+# can also be made using list constructor
+list1 = (("abc", 34, True, 40, "male"))
+print(list1[2:4])
+
+'''List Items
+List items are ordered, changeable, and allow duplicate values.
+
+List items are indexed, the first item has index [0], the second item has index [1] etc.'''
+
+# ordered, allow duplicates, changeable
+
+----------------------------------------------------
+# Tuples\
+
+thistuple = ("apple", "banana", "cherry")
+print(type(thistuple))
+'''Tuple items are ordered, unchangeable, and allow duplicate values.
+
+Tuple items are indexed, the first item has index [0], the second item has index [1] etc.'''
+print(len(thistuple))
+thistuple2 = ("apple",)
+print(type(thistuple))
+
+#NOT a tuple
+thistuple = ("apple")
+print(type(thistuple))
+# contains multiple data types
+tuple1 = ("abc", 34, True, 40, "male")
+
+# we can also do this:
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+print(thistuple)
+----------------------------------------
+# sets
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+print(len(thisset))
+# Set items are unordered, unchangeable, and do not allow duplicate values.
+# false = 0 and true = 1 so wrong
+thisset = {"apple", "banana", "cherry", False, True, 0}
+print(thisset)
+thisset2 = set(("apple", "banana", "cherry")) # note the double round-brackets
+print(thisset)
+-----------------------------------------
+# dictionaries
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+print(thisdict)
+print(len(thisdict))
+
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+
+----------------------------------------
+# python stack code
+class Stack:
+    def __init__(self):
+        # Initializing an empty list to store stack elements
+        self.stack = []
+        
+    def push(self, item):
+        # Adds an item to the top of the stack
+        self.stack.append(item)
+        
+    def pop(self):
+        # Removes and returns the top item from the stack
+        if self.is_empty():
+            return "Stack is empty"
+        return self.stack.pop()
+    
+    def peek(self):
+        # Returns the top item of the stack without removing it
+        if self.is_empty():
+            return "Stack is empty"
+        return self.stack[-1]
+    
+    def is_empty(self):
+        # Checks if the stack is empty
+        return len(self.stack) == 0
+    
+    def size(self):
+        # Returns the number of elements in the stack
+        return len(self.stack)
+
+# Example usage:
+stack = Stack()
+stack.push(5)
+stack.push(10)
+stack.push(15)
+
+print(stack.peek())  # Output: 15
+print(stack.pop())   # Output: 15
+print(stack.size())  # Output: 2
+print(stack.pop())   # Output: 10
+print(stack.is_empty())  # Output: False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
